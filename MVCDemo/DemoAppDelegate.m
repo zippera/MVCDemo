@@ -7,6 +7,7 @@
 //
 
 #import "DemoAppDelegate.h"
+#import "DemoTableViewController.h"
 
 @implementation DemoAppDelegate
 
@@ -14,6 +15,12 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    DemoTableViewController *demoVC = [[DemoTableViewController alloc]init];
+    
+    UINavigationController *navC = [[UINavigationController alloc]initWithRootViewController:demoVC];
+    self.window.rootViewController = navC;
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
