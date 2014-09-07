@@ -66,6 +66,7 @@
     
     self.tableView.backgroundColor = [UIColor whiteColor];
     self.tableView.dataSource = self;
+    self.tableView.delegate = self;
     self.title = @"Demo";
     [self reLoad];
     // Uncomment the following line to preserve selection between presentations.
@@ -101,8 +102,6 @@
     if (!cell) {
         cell = [[DemoTableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
     }
-    //NSDictionary *dict = [posts objectAtIndex:indexPath.row];
-    //cell.post.title = dict.title;
     cell.post = [[DemoPost alloc]initWithDictionary: [posts objectAtIndex:indexPath.row]];
     NSLog(@"this post: %@", cell.post);
     

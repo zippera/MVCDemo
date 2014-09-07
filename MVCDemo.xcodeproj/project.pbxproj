@@ -118,6 +118,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D53E741819BC451A00C44249 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D575F9E119BA9FCA00757DAA /* DemoTableViewController.h */,
+				D575F9E219BA9FCA00757DAA /* DemoTableViewController.m */,
+				D575FA0C19BBF7C200757DAA /* DetailViewController.h */,
+				D575FA0D19BBF7C200757DAA /* DetailViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		D53E741919BC452B00C44249 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D575F9E419BA9FF000757DAA /* DemoTableViewCell.h */,
+				D575F9E519BA9FF000757DAA /* DemoTableViewCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		D53E741A19BC453900C44249 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D575F9E719BAA50C00757DAA /* DemoPost.h */,
+				D575F9E819BAA50C00757DAA /* DemoPost.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		D53E741B19BC455E00C44249 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				D575F9EF19BAAAEF00757DAA /* AFNetworking */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
 		D575F9A619BA9F8E00757DAA = {
 			isa = PBXGroup;
 			children = (
@@ -153,15 +190,11 @@
 			children = (
 				D575F9C119BA9F8F00757DAA /* DemoAppDelegate.h */,
 				D575F9C219BA9F8F00757DAA /* DemoAppDelegate.m */,
-				D575F9E119BA9FCA00757DAA /* DemoTableViewController.h */,
-				D575F9E219BA9FCA00757DAA /* DemoTableViewController.m */,
-				D575FA0C19BBF7C200757DAA /* DetailViewController.h */,
-				D575FA0D19BBF7C200757DAA /* DetailViewController.m */,
-				D575F9E419BA9FF000757DAA /* DemoTableViewCell.h */,
-				D575F9E519BA9FF000757DAA /* DemoTableViewCell.m */,
-				D575F9E719BAA50C00757DAA /* DemoPost.h */,
-				D575F9E819BAA50C00757DAA /* DemoPost.m */,
+				D53E741819BC451A00C44249 /* Controller */,
+				D53E741919BC452B00C44249 /* View */,
+				D53E741A19BC453900C44249 /* Model */,
 				D575F9C419BA9F8F00757DAA /* Images.xcassets */,
+				D53E741B19BC455E00C44249 /* Library */,
 				D575F9EA19BAA84A00757DAA /* Images */,
 				D575F9B919BA9F8F00757DAA /* Supporting Files */,
 			);
@@ -171,7 +204,6 @@
 		D575F9B919BA9F8F00757DAA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D575F9EF19BAAAEF00757DAA /* AFNetworking */,
 				D575F9BA19BA9F8F00757DAA /* MVCDemo-Info.plist */,
 				D575F9BB19BA9F8F00757DAA /* InfoPlist.strings */,
 				D575F9BE19BA9F8F00757DAA /* main.m */,
