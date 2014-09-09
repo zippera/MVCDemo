@@ -8,6 +8,7 @@
 
 #import "DetailViewController.h"
 #import "AFNetworking.h"
+#import "MBProgressHUD.h"
 
 @interface DetailViewController ()
 //@property (weak, nonatomic)UIWebView *webView;
@@ -40,12 +41,30 @@
 - (void)loadWebFromLink:(NSString *)link
 {
     UIWebView *webView = [[UIWebView alloc]initWithFrame:self.view.bounds];
+    self.view = webView;
+    //[self.view addSubview:webView];
+    //MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    //hud.labelText = @"正在玩命加载中";
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        NSURL *url = [NSURL URLWithString:link];
+        NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:60*24];
+        [webView loadRequest:request];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            //[hud hide:YES];
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+        });
+        
+    });
+    /*UIWebView *webView = [[UIWebView alloc]initWithFrame:self.view.bounds];
     link = [@"http://www.readability.com/m?url=" stringByAppendingString:link];
     NSURL *url = [NSURL URLWithString:link];
     NSLog(@"link: %@", url);
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:60*24];
     [webView loadRequest:request];
-    [self.view addSubview:webView];
+    [self.view addSubview:webView];*/
 
 }
 
